@@ -18,6 +18,36 @@ interface printTeacherfunction {
     (firstName: string, lastName: string): string
 }
 
+// Ceci va définir l'interface StudentClassInterface
+interface StudentClassInterface {
+    workOnHomework(): string;
+    displayName(): string;
+}
+
+// Ceci va définir l'interface StudentClassConstructor
+interface StudentClassConstructor {
+    new (firstName: string, lastName: string): StudentClassInterface;
+}
+
+// Ceci va définir la classe StudentClass décrite par les interfaces précédentes
+class StudentClass implements StudentClassInterface {
+    firstName: string;
+    lastName: string;
+
+    constructor(firstName: string, lastName: string) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    workOnHomework(): string {
+        return "Currently working";
+    }
+
+    displayName(): string {
+        return this.firstName;
+    }
+}
+
 // Ceci est la fonction printTeacher qui va permettre d'afficher le nom complet.
 const printTeacher: printTeacherfunction  = (firstName, lastName) => {
     return `${firstName.charAt(0)}. ${lastName}`;
