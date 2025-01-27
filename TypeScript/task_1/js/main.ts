@@ -13,6 +13,16 @@ interface Directors extends Teacher {
     numberOfReports: number;
 }
 
+// Ceci va définir l'interface printTeacher pour la fonction du même nom
+interface printTeacherfunction {
+    (firstName: string, lastName: string): string
+}
+
+// Ceci est la fonction printTeacher qui va permettre d'afficher le nom complet.
+const printTeacher: printTeacherfunction  = (firstName, lastName) => {
+    return `${firstName.charAt(0)}. ${lastName}`;
+}
+
 // Exemple appelé teacher1 qui utilise l'interface Teacher
 const teacher1: Teacher = {
     firstName: 'John',
