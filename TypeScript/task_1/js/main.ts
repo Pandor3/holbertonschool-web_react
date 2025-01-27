@@ -8,6 +8,11 @@ interface Teacher {
     [key: string]: any;
 };
 
+// Ceci va définir l'interface Director qui est une extension l'interface Teacher
+interface Directors extends Teacher {
+    numberOfReports: number;
+}
+
 // Exemple appelé teacher1 qui utilise l'interface Teacher
 const teacher1: Teacher = {
     firstName: 'John',
@@ -17,6 +22,17 @@ const teacher1: Teacher = {
   yearsOfExperience: 5,
   contract: false,
 };
+
+// Exemple appelé director1 qui utilise l'interface Directors
+const director1: Directors = {
+    firstName: 'John',
+    lastName: 'Doe',
+    location: 'London',
+    fullTimeEmployee: true,
+    yearsOfExperience: 10,
+    numberOfReports: 17,
+  };
+  console.log(director1);
 
 // Ceci affichera les informations d'un professeur.
 function displayTeacherInfo(teacher: Teacher): void {
