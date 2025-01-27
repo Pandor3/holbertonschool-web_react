@@ -1,3 +1,4 @@
+// Ceci est l'interface définie en tant que Student
 interface Student {
     firstName: string;
     lastName: string;
@@ -5,6 +6,7 @@ interface Student {
     location: string;
 }
 
+// Ceci définit les données de student1
 const student1: Student = {
     firstName: "Somebody",
     lastName: "Once",
@@ -12,6 +14,7 @@ const student1: Student = {
     location: "USA"
 };
 
+// Ceci définit les données de student2
 const student2: Student = {
     firstName: "Told",
     lastName: "me",
@@ -19,13 +22,16 @@ const student2: Student = {
     location: "United States"
 };
 
+// Ceci est un tableau avec les données de student1 et student2
 const studentsList: Student[] = [student1, student2];
 
+// Ceci va permettre de créer et d'afficher la table.
 document.addEventListener("DOMContentLoaded", () => {
     const table = document.createElement("table");
     const tableHead = document.createElement("thead");
     const tableBody = document.createElement("tbody");
-
+    
+    // Ceci permet de créer une entête pour le tableau
     const headerRow = document.createElement("tr");
     const headers = ["First Name", "Location"];
 
@@ -37,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tableHead.appendChild(headerRow);
 
+    // Ceci permet d'ajouter les données des étudiants
     studentsList.forEach(student => {
         const row = document.createElement("tr");
 
